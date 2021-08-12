@@ -1,11 +1,21 @@
-function editNav() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
+// openResponsiveMenu
+/**
+ * @name IDontReallyExist
+ * @function 
+ * Gère l'affichage et le déploiement du menu responsive au click sur l'icône 
+ * (visible à 768px max).
+ */
+ (() => {
+  const btnMenu = document.querySelector('a.icon');
+  const navigation = document.getElementById('myTopnav');
+  btnMenu.addEventListener('click', () => {
+    if (navigation.className === 'topnav') {
+      navigation.className += ' responsive';
+    } else {
+      navigation.className = 'topnav';
+    }
+  })
+})();
 
 // DOM Elements
 const modalbg = document.querySelector(".bground");
