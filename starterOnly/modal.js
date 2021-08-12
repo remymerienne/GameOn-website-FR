@@ -1,23 +1,38 @@
-function editNav() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-
 // DOM Elements
-const modalbg = document.querySelector(".bground");
-const modalBtn = document.querySelectorAll(".modal-btn");
-const formData = document.querySelectorAll(".formData");
+const modalbg = document.querySelector('.bground');
+const modalBtn = document.querySelectorAll('.modal-btn');
 
-// launch modal event
-modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
+// openResponsiveMenu
+/**
+ * @name IDontReallyExist
+ * @function 
+ * Gère l'affichage et le déploiement du menu responsive au click sur l'icône 
+ * (visible à 768px max).
+ */
+ (() => {
+  const btnMenu = document.querySelector('a.icon');
+  const navigation = document.getElementById('myTopnav');
+  btnMenu.addEventListener('click', () => {
+    if (navigation.className === 'topnav') {
+      navigation.className += ' responsive';
+    } else {
+      navigation.className = 'topnav';
+    }
+  })
+})();
 
-// launch modal form
-function launchModal() {
-  modalbg.style.display = "block";
-}
-
-
+// openForm
+/**
+ * @name IDontReallyExist
+ * @function 
+ * - Ouvre le formulaire au click sur le boutton 'je M'inscris'.
+ * - Efface les données stockées en localStorage.
+ */
+ (() => {
+  modalBtn.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      modalbg.style.display = 'block';
+      localStorage.clear();
+    })
+  })
+})();
