@@ -36,3 +36,16 @@ const modalBtn = document.querySelectorAll('.modal-btn');
     })
   })
 })();
+
+// closeForm
+/**
+ * @name IDontReallyExist
+ * @function 
+ * Ferme le formulaire au click sur (x).
+ */
+ (() => {
+  const modalCloseBtn = document.querySelector('span.close');
+  modalCloseBtn.addEventListener('click', () => {
+    modalbg.style.display = 'none';
+  })
+})();
