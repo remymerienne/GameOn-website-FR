@@ -1,6 +1,7 @@
 // various
 const submitForm = document.querySelector('input.btn-submit');
 const modalbg = document.querySelector('.bground');
+const boxValidation = document.querySelector('.bground-confirmation');
 
 // inputTextListened
 const firstName = document.getElementById('first');
@@ -77,7 +78,6 @@ const errorMessageQuantity = 'Il y a eu 6 évenements par le passé. Choisir ent
     modalbg.style.display = 'none';
   })
 })();
-
 
 // disableSubmit
 /**
@@ -234,6 +234,34 @@ const newsLetter = () => {
 };
 
 /**
+ * @name closeBookingConfirmation
+ * @function 
+ * - Ferme la fenêtre de confirmation au click sur 'ok'.
+ * - Recharge la page.
+ */
+const closeBookingConfirmation = () => {
+  const btnValidation = document.querySelector('.bground-confirmation button');
+  btnValidation.addEventListener('click', () => {
+    boxValidation.style.display = 'none';
+    window.location.reload();
+  })
+};
+
+/**
+ * @name bookingConfirmation
+ * @function
+ * Ouvre une fenêtre de confirmation de réservation personnalisée.
+ */
+const bookingConfirmation = () => {
+  const user = localStorage.getItem('firstName');
+  const whereTextValidation = document.getElementById('confirmation');
+  boxValidation.style.display = 'block';
+  whereTextValidation.innerHTML = `<p>Cher ${user},<br><br>Votre inscription a bien été prise en compte.</p>
+  <button class="btn-submit button">Ok</button>`;
+  closeBookingConfirmation();
+};
+
+/**
  * @name goodAnswer
  * @function
  * Compte le nombre d'entrées valides saisies par l'utilisateur.
@@ -247,14 +275,16 @@ const goodAnswer = () => {
 };
 
 /**
- * @name validation
+ * @name validationAndConfirmation
  * @function
- * - Recharge la page si toutes les entrées sont correct.
+ * - Ferme le formulaire si toutes les entrées sont correct.
+ * - Affiche la confirmation de réservation.
  */
-const validation = () => {
+const validationAndConfirmation = () => {
   submitForm.addEventListener('click', () => {
-    if (goodAnswer() === 7) {
-      window.location.reload();
+    if (goodAnswer() === 1) {
+      modalbg.style.display = 'none';
+      bookingConfirmation();
     }
   })
 };
@@ -277,6 +307,6 @@ checkCitySelect();
 termOfUse();
 newsLetter();
 
-validation();
+validationAndConfirmation();
 
 // ************************* End **************************
