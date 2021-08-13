@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Reservation</title>
+  <title>Réservation</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="modal.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -43,7 +43,7 @@
         </button>
       </div>
       <div class="hero-img">
-        <img src="./images/bg_img.jpg" alt="img">
+        <img src="./images/bg_img.jpg" alt="Pratiquante de E-sport">
       </div>
       <button class="btn-signup modal-btn">
         je m'inscris
@@ -55,36 +55,39 @@
         <span class="close"></span>
         <div class="modal-body">
 
-          <form name="reserve" action="index.html" method="get" onsubmit="return validate();">
+          <form novalidate>
 
-            <div class="formData">
+            <div class="formData" id="firstName">
               <label for="first">Prénom</label>
-              <input class="text-control" type="text" id="first" name="first" minlength="2">
+              <input class="text-control" id="first">
             </div>
 
-            <div class="formData">
+            <div class="formData" id="lastName">
               <label for="last">Nom</label>
-              <input class="text-control" type="text" id="last" name="last">
+              <input class="text-control" id="last">
             </div>
 
-            <div class="formData">
+            <div class="formData" id="eMail">
               <label for="email">E-mail</label>
-              <input class="text-control" type="email" id="email" name="email">
+              <input class="text-control" id="email" placeholder="example@email.com">
             </div>
 
-            <div class="formData">
+            <div class="formData" id="birthDate">
               <label for="birthdate">Date de naissance</label>
-              <input class="text-control" type="date" id="birthdate" name="birthdate">
+              <input class="text-control" id="birthdate" placeholder="jj/mm/aaaa">
             </div>
 
-            <div class="formData">
+            <div class="formData" id="numberOfTournament">
               <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label>
-              <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+              <input class="text-control" id="quantity" placeholder="1-6">
             </div>
 
-            <p class="text-label">Quelles villes ?</p>
 
-            <div class="formData">
+            <div class="formData" id="city">
+
+              <p class="text-label">Quelles villes ?</p>
+
+              <div class="error-message"></div>
 
               <input class="checkbox-input" type="radio" id="location1" name="location" value="New York">
               <label class="checkbox-label" for="location1">
@@ -118,13 +121,15 @@
 
             </div>
 
-            <div class="formData">
+            <div class="formData" id="tOU">
 
               <input class="checkbox-input" type="checkbox" id="checkbox1">
               <label class="checkbox2-label" for="checkbox1">
                 <span class="checkbox-icon"></span>
                 J'ai lu et accepté les conditions d'utilisation.
               </label>
+
+              <div class="error-message"></div>
 
               <input class="checkbox-input" type="checkbox" id="checkbox2">
               <label class="checkbox2-label" for="checkbox2">
