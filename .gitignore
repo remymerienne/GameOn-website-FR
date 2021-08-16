@@ -2,4 +2,13 @@
 starterOnly/README.md
 starterOnly/draft.js
 starterOnly/supply
+starterOnly/node_modules
+starterOnly/.eslintrc.json
+starterOnly/package-lock.json
+starterOnly/package.json
+
+
+
+
+
 
