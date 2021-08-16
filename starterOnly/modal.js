@@ -1,4 +1,4 @@
-// various
+// domElement
 const submitForm = document.querySelector('input.btn-submit');
 const modalbg = document.querySelector('.bground');
 const boxValidation = document.querySelector('.bground-confirmation');
@@ -11,8 +11,8 @@ const birthDate = document.getElementById('birthdate');
 const quantity = document.getElementById('quantity');
 
 // regExp
-const regExpName = /^([A-Za-zéèêëîï]{2,15})([\-\s]?)([A-Za-zéèêëîï]{0,15})$/;
-const regExpMail = /^([A-Za-z0-9\-\.]+)@([A-Za-z0-9\-]+)\.([a-z]{2,3})$/;
+const regExpName = /^([A-Za-zéèêëîï]{2,15})([-\s]?)([A-Za-zéèêëîï]{0,15})$/;
+const regExpMail = /^([A-Za-z0-9\-.]+)@([A-Za-z0-9-]+)\.([a-z]{2,3})$/;
 const regExpDate = /^(((0[1-9]|[12][0-9]|30)[-/]?(0[13-9]|1[012])|31[-/]?(0[13578]|1[02])|(0[1-9]|1[0-9]|2[0-8])[-/]?02)[-/]?[0-9]{4}|29[-/]?02[-/]?([0-9]{2}(([2468][048]|[02468][48])|[13579][26])|([13579][26]|[02468][048]|0[0-9]|1[0-6])00))$/;
 const regExpNumber = /^[1-6]{1}$/;
 
@@ -74,9 +74,7 @@ const errorMessageQuantity = 'Il y a eu 6 évenements par le passé. Choisir ent
  */
 (() => {
   const modalCloseBtn = document.querySelector('span.close');
-  modalCloseBtn.addEventListener('click', () => {
-    modalbg.style.display = 'none';
-  })
+  modalCloseBtn.addEventListener('click', () => modalbg.style.display = 'none');
 })();
 
 // disableSubmit
@@ -85,9 +83,7 @@ const errorMessageQuantity = 'Il y a eu 6 évenements par le passé. Choisir ent
  * @function
  * Annule le comportement par défaut de la soumission du formulaire.
  */
-(() => {
-  submitForm.addEventListener('click', (e) => e.preventDefault())
-})();
+(() => submitForm.addEventListener('click', (e) => e.preventDefault()))();
 
 // = Fonctions Anonymes Auto-invoquées - End
 // ==========================
@@ -181,7 +177,7 @@ const checkCitySelect = () => {
   const whereToSetErrorMessage = document.querySelector('div#city.formData .error-message');
   submitForm.addEventListener('click', () => {
     // Boucle de vérification des bouttons 'radio'.
-    for (item of inputsListened) {
+    for (let item of inputsListened) {
       if (item.checked) {
         whereToSetErrorMessage.innerHTML = '';
         whereToSetErrorData.setAttribute('data-error-visible', 'false');
@@ -228,9 +224,7 @@ const termOfUse = () => {
  */
 const newsLetter = () => {
   const inputListened = document.getElementById('checkbox2');
-  submitForm.addEventListener('click', () => {
-    localStorage.setItem('newsLetter', inputListened.checked);
-  })
+  submitForm.addEventListener('click', () => localStorage.setItem('newsLetter', inputListened.checked));
 };
 
 /**
@@ -269,7 +263,7 @@ const bookingConfirmation = () => {
  */
 const goodAnswer = () => {
   const allEntry = document.querySelectorAll('.formData[data-error-visible="false"]');
-  i = 0;
+  let i = 0;
   allEntry.forEach(() => i += 1);
   return i;
 };
@@ -282,7 +276,7 @@ const goodAnswer = () => {
  */
 const validationAndConfirmation = () => {
   submitForm.addEventListener('click', () => {
-    if (goodAnswer() === 1) {
+    if (goodAnswer() === 7) {
       modalbg.style.display = 'none';
       bookingConfirmation();
     }
@@ -308,5 +302,25 @@ termOfUse();
 newsLetter();
 
 validationAndConfirmation();
+
+// *********************** Back-end ***********************
+
+// dataForBackEnd
+const userData = {
+  firstName: localStorage.getItem('firstName'),
+  lastName: localStorage.getItem('lastName'),
+  eMail: localStorage.getItem('eMail'),
+  birthDate: localStorage.getItem('birthDate'),
+  quantity: localStorage.getItem('quantity'),
+  city: localStorage.getItem('city'),
+  newsLetter: localStorage.getItem('newsLetter')
+};
+
+// displayUserData
+(() => {
+  for (let property in userData) {
+    console.log(`${property}: ${userData[property]}`);
+  }
+})();
 
 // ************************* End **************************
