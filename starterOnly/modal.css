@@ -80,6 +80,11 @@ img {
   .topnav a.icon {
     float: right;
     display: block;
+    color: #ff0000;
+  }
+  
+  .topnav a.icon:hover {
+    color: white;
   }
 }
 
@@ -101,17 +106,17 @@ img {
   }
 }
 
-@media screen and (max-width: 540px) {
+/* @media screen and (max-width: 540px) {
   .topnav a {
     display: none;
   }
 
   .topnav a.icon {
-    float: right;
-    display: block;
-    margin-top: -15px;
+     float: right;
+    display: block; 
+    margin-top: -15px; 
   }
-}
+} */
 
 main {
   font-size: 130%;
@@ -122,7 +127,7 @@ main {
   padding-right: 2vw;
   margin: 1px 20px 15px;
   border-radius: 2rem;
-  text-align: justify;
+  /* text-align: justify; */
 }
 
 .modal-btn {
@@ -179,6 +184,12 @@ main {
   overflow: auto;
   background-color: rgba(26, 39, 156, 0.4);
 }
+
+#confirmation p {  
+margin: 200px 15%;
+text-align: center;
+font-weight: 400;
+}
 /* * Bloc de confirmation - End */
 
 .bground {
@@ -206,6 +217,21 @@ main {
   color: #fff;
   padding-top: 10px;
 }
+@media screen and (max-width: 768px) {
+  .content {
+    /* --- Box --- */
+    margin: 20% auto;
+    /* --- Border --- */
+    
+    /* --- Background --- */
+    
+    /* --- Text --- */
+    
+    /* --- Other --- */
+    
+  }
+}
+
 
 .modal-body {
   padding: 15px 8%;
@@ -218,6 +244,7 @@ label {
   font-weight: normal;
   display: inline-block;
   margin-bottom: 11px;
+  margin-top: 5px;
 }
 
 input {
@@ -235,15 +262,19 @@ input {
   height: 48px;
 }
 
+/* ! travail en cours */
 .formData[data-error]::after {
   content: attr(data-error);
-  font-size: 0.4em;
-  color: #e54858;
-  display: block;
-  margin-top: 7px;
-  margin-bottom: 7px;
-  text-align: right;
-  line-height: 0.3;
+
+  font-size: 12px;
+  color: #ff4e60;
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  line-height: 14px;
+
   opacity: 0;
   transition: 0.3s;
 }
@@ -256,6 +287,23 @@ input {
   border: 2px solid #e54858;
 }
 
+/* ! travail en cours */
+.error-message {
+  font-size: 12px;
+  color: #ff4e60;
+  margin-left: 4px;
+  line-height: 14px;
+
+}
+/* ! travail en cours */
+@media screen and (max-width: 424px) {
+  .error-message {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+
+/* ! *********************** */
 /* 
 input[data-error]::after {
     content: attr(data-error);
@@ -267,8 +315,16 @@ input[data-error]::after {
 .checkbox2-label {
   position: relative;
   margin-left: 36px;
+  margin-top: 5px;
   font-size: 12px;
   font-weight: normal;
+}
+/* ! travail en cours */
+@media screen and (max-width: 361px) {
+  .checkbox-label,
+  .checkbox2-label {
+    margin-top: 10px;
+  }
 }
 
 .checkbox-label .checkbox-icon,
@@ -368,7 +424,7 @@ input[data-error]::after {
 .btn-signup {
   background: #fe142f;
   display: block;
-  margin: 0 auto;
+  margin: 10px auto 0 auto;
   border-radius: 7px;
   font-size: 1rem;
   padding: 12px 82px;
