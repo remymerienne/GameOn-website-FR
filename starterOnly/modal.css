@@ -27,6 +27,7 @@ p {
   padding: 0.5vw;
 }
 
+
 img {
   padding-right: 1rem;
 }
@@ -34,14 +35,68 @@ img {
 .topnav {
   overflow: hidden;
   margin: 3.5%;
+  /* Border: 1px solid red; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 10px;
 }
 
-.header-logo {
-  float: left;
+@media screen and (max-width: 768px) {
+  .topnav {
+    flex-wrap: nowrap;
+    align-items: flex-start;
+  }
 }
+
+
+
+@media screen and (min-width: 768px) and (max-width: 1091px) {
+  .header-logo {
+    /* Border: 1px solid green; */
+    margin-bottom: 20px;
+  }
+}
+
+
+
+.header-logo img {
+  width: 230px;
+  /* --- Box --- */
+
+  /* --- Border --- */
+
+  /* --- Background --- */
+
+  /* --- Text --- */
+
+  /* --- Other --- */
+
+}
+/* 424px */
+@media screen and (max-width: 768px) {
+  .header-logo img {
+    width: 160px;
+    margin-top: 9px;
+    /* --- Box --- */
+
+    /* --- Border --- */
+
+    /* --- Background --- */
+
+    /* --- Text --- */
+
+    /* --- Other --- */
+
+  }
+}
+
+
+
 
 .main-navbar {
-  float: right;
+  /* float: right; */
 }
 
 .topnav a {
@@ -56,16 +111,43 @@ img {
   font-family: Roboto, sans-serif;
 }
 
+@media screen and (max-width: 844px) {
+  .topnav a {
+    /* --- Box --- */
+    font-size: 18px;
+    padding: 10px 10px;
+    /* --- Border --- */
+    
+    /* --- Background --- */
+    
+    /* --- Text --- */
+    
+    /* --- Other --- */
+    
+  }
+}
+
+
+
 .topnav a:hover {
   background-color: #ff0000;
   color: #ffffff;
   border-radius: 15px;
+ 
 }
 
 .topnav a.active {
   background-color: #ff0000;
   color: #ffffff;
   border-radius: 15px;
+}
+
+.active span {
+  border-bottom: 2px solid white;
+}
+
+a:hover span {
+  border-bottom: 2px solid white;
 }
 
 .topnav .icon {
@@ -79,13 +161,19 @@ img {
 
   .topnav a.icon {
     float: right;
+  
     display: block;
     color: #ff0000;
   }
-  
+
   .topnav a.icon:hover {
     color: white;
   }
+
+  .main-navbar:hover a.icon {
+    color: white;
+  }
+  
 }
 
 @media screen and (max-width: 768px) {
@@ -95,7 +183,7 @@ img {
 
   .topnav.responsive .icon {
     position: absolute;
-    right: 0;
+    right: 15px;
     top: 0;
   }
 
@@ -185,11 +273,12 @@ main {
   background-color: rgba(26, 39, 156, 0.4);
 }
 
-#confirmation p {  
-margin: 200px 15%;
-text-align: center;
-font-weight: 400;
+#confirmation p {
+  margin: 200px 15%;
+  text-align: center;
+  font-weight: 400;
 }
+
 /* * Bloc de confirmation - End */
 
 .bground {
@@ -217,18 +306,19 @@ font-weight: 400;
   color: #fff;
   padding-top: 10px;
 }
+
 @media screen and (max-width: 768px) {
   .content {
     /* --- Box --- */
-    margin: 20% auto;
+    margin: 22% auto;
     /* --- Border --- */
-    
+
     /* --- Background --- */
-    
+
     /* --- Text --- */
-    
+
     /* --- Other --- */
-    
+
   }
 }
 
@@ -295,6 +385,7 @@ input {
   line-height: 14px;
 
 }
+
 /* ! travail en cours */
 @media screen and (max-width: 424px) {
   .error-message {
@@ -319,8 +410,10 @@ input[data-error]::after {
   font-size: 12px;
   font-weight: normal;
 }
+
 /* ! travail en cours */
 @media screen and (max-width: 361px) {
+
   .checkbox-label,
   .checkbox2-label {
     margin-top: 10px;
