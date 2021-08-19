@@ -279,7 +279,7 @@ const goodAnswer = () => {
  */
 const validationAndConfirmation = () => {
   submitForm.addEventListener('click', () => {
-    if (goodAnswer() === 1) {
+    if (goodAnswer() === 7) {
       modalbg.style.display = 'none';
       bookingConfirmation();
     }
