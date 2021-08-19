@@ -11,7 +11,7 @@ const birthDate = document.getElementById('birthdate');
 const quantity = document.getElementById('quantity');
 
 // regExp
-const regExpName = /^([A-Za-zéèêëîï]{2,15})([-\s]?)([A-Za-zéèêëîï]{0,15})$/;
+const regExpName = /^([A-Za-zéèêëîïç]{2,15})([-\s]?)([A-Za-zéèêëîïç]{0,15})$/;
 const regExpMail = /^([A-Za-z0-9\-.]+)@([A-Za-z0-9-]+)\.([a-z]{2,3})$/;
 const regExpDate = /^(((0[1-9]|[12][0-9]|30)[-/]?(0[13-9]|1[012])|31[-/]?(0[13578]|1[02])|(0[1-9]|1[0-9]|2[0-8])[-/]?02)[-/]?[0-9]{4}|29[-/]?02[-/]?([0-9]{2}(([2468][048]|[02468][48])|[13579][26])|([13579][26]|[02468][048]|0[0-9]|1[0-6])00))$/;
 const regExpNumber = /^[1-6]{1}$/;
@@ -41,7 +41,7 @@ const errorMessageQuantity = 'Il y a eu 6 évenements par le passé. Choisir ent
     } else {
       navigation.className = 'topnav';
     }
-  })
+  });
 })();
 
 // ************************ Modal *************************
@@ -55,6 +55,7 @@ const errorMessageQuantity = 'Il y a eu 6 évenements par le passé. Choisir ent
  * @function 
  * - Ouvre le formulaire au click sur le boutton 'je M'inscris'.
  * - Efface les données stockées en localStorage.
+ * - Remonte la page afin de voir le logo au dessus du formulaire.
  */
 (() => {
   const modalBtn = document.querySelectorAll('.modal-btn');
@@ -62,8 +63,9 @@ const errorMessageQuantity = 'Il y a eu 6 évenements par le passé. Choisir ent
     btn.addEventListener('click', () => {
       modalbg.style.display = 'block';
       localStorage.clear();
-    })
-  })
+      window.scrollTo(0,0);
+    });
+  });
 })();
 
 // closeForm
@@ -129,11 +131,12 @@ const changeFocusTextValidity = (inputListened, regExp, errorMessage) => {
     const validate = regExp.test(e.target.value);
     if (validate) {
       selectParent(inputListened).setAttribute('data-error-visible', 'false');
+      selectParent(inputListened).setAttribute('data-error', '');
     } else {
       selectParent(inputListened).setAttribute('data-error-visible', 'true');
       selectParent(inputListened).setAttribute('data-error', errorMessage);
     }
-  })
+  });
 };
 
 /**
@@ -159,7 +162,7 @@ const submitTextValidity = (inputListened, errorMessage, keyName) => {
       let data = inputListened.value;
       localStorage.setItem(keyName, data);
     }
-  })
+  });
 };
 
 /**
@@ -189,7 +192,7 @@ const checkCitySelect = () => {
         whereToSetErrorData.setAttribute('data-error-visible', 'true');
       }
     }
-  })
+  });
 };
 
 /**
@@ -206,13 +209,13 @@ const termOfUse = () => {
   const whereToSetErrorMessage = document.querySelector('div.formData#tOU .error-message');
   submitForm.addEventListener('click', () => {
     if (inputListened.checked == false) {
-      whereToSetErrorMessage.innerHTML = `<p>Vous devez accepter les termes et conditions.</p>`;
+      whereToSetErrorMessage.innerHTML = '<p>Vous devez accepter les termes et conditions.</p>';
       whereToSetErrorData.setAttribute('data-error-visible', 'true');
     } else if (inputListened.checked) {
       whereToSetErrorMessage.innerHTML = '';
       whereToSetErrorData.setAttribute('data-error-visible', 'false');
     }
-  })
+  });
 };
 
 /**
@@ -238,7 +241,7 @@ const closeBookingConfirmation = () => {
   btnValidation.addEventListener('click', () => {
     boxValidation.style.display = 'none';
     window.location.reload();
-  })
+  });
 };
 
 /**
@@ -250,7 +253,7 @@ const bookingConfirmation = () => {
   const user = localStorage.getItem('firstName');
   const whereTextValidation = document.getElementById('confirmation');
   boxValidation.style.display = 'block';
-  whereTextValidation.innerHTML = `<p>Cher ${user},<br><br>Votre inscription a bien été prise en compte.</p>
+  whereTextValidation.innerHTML = `<p>Cher(e) ${user},<br>Votre inscription a bien été prise en compte.</p>
   <button class="btn-submit button">Ok</button>`;
   closeBookingConfirmation();
 };
@@ -276,11 +279,11 @@ const goodAnswer = () => {
  */
 const validationAndConfirmation = () => {
   submitForm.addEventListener('click', () => {
-    if (goodAnswer() === 7) {
+    if (goodAnswer() === 1) {
       modalbg.style.display = 'none';
       bookingConfirmation();
     }
-  })
+  });
 };
 
 // ********************************************************
