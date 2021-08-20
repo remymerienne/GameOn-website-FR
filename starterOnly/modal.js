@@ -72,11 +72,15 @@ const errorMessageQuantity = 'Il y a eu 6 évenements par le passé. Choisir ent
 /**
  * @name IDontReallyExist
  * @function 
- * Ferme le formulaire au click sur (x).
+ * - Ferme le formulaire au click sur (x).
+ * - Recharge la page
  */
-(() => {
+ (() => {
   const modalCloseBtn = document.querySelector('span.close');
-  modalCloseBtn.addEventListener('click', () => modalbg.style.display = 'none');
+  modalCloseBtn.addEventListener('click', () => {
+    modalbg.style.display = 'none';
+    window.location.reload();
+  });
 })();
 
 // disableSubmit
