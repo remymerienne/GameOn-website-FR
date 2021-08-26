@@ -2,6 +2,7 @@
 const submitForm = document.querySelector('input.btn-submit');
 const modalbg = document.querySelector('.bground');
 const boxValidation = document.querySelector('.bground-confirmation');
+const modal = document.querySelector('form');
 
 // inputTextListened
 const firstName = document.getElementById('first');
@@ -53,8 +54,9 @@ const errorMessageQuantity = 'Il y a eu 6 évenements par le passé. Choisir ent
 /**
  * @name IDontReallyExist
  * @function 
- * - Ouvre le formulaire au click sur le boutton 'je M'inscris'.
+ * - Ouvre le formulaire au click sur le boutton 'Je m'inscris'.
  * - Efface les données stockées en localStorage.
+ * - Reset les input du formulaire
  * - Remonte la page afin de voir le logo au dessus du formulaire.
  */
 (() => {
@@ -63,6 +65,7 @@ const errorMessageQuantity = 'Il y a eu 6 évenements par le passé. Choisir ent
     btn.addEventListener('click', () => {
       modalbg.style.display = 'block';
       localStorage.clear();
+      modal.reset();
       window.scrollTo(0,0);
     });
   });
@@ -244,6 +247,7 @@ const closeBookingConfirmation = () => {
   const btnValidation = document.querySelector('.bground-confirmation button');
   btnValidation.addEventListener('click', () => {
     boxValidation.style.display = 'none';
+    // Permet la mise à jour des données dans la console
     window.location.reload();
   });
 };
