@@ -4,57 +4,64 @@ Projet N°4 du parcours _Développeur Front-End_ [OpenClassrooms](https://opencl
 
 <img alt="HTML5" src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white"><img alt="CSS3" src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white"><img alt="JavaSript" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
 
-<img alt="GIT" src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"><img alt="GIhub" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"><img alt="GITKRAKEN" src="https://img.shields.io/badge/GitKraken-179287?style=for-the-badge&logo=GitKraken&logoColor=white">
+<img alt="GIT" src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"><img alt="GIhub" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"><img alt="GITKRAKEN" src="https://img.shields.io/badge/GitKraken-179287?style=for-the-badge&logo=GitKraken&logoColor=white">![Shell Script](https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white)
 
-<img alt="ESLint" src="https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white"><img alt="Visual Studio Code" src="https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white">
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)![Google Chrome](https://img.shields.io/badge/Google%20Chrome-4285F4?style=for-the-badge&logo=GoogleChrome&logoColor=white)
 
-L'intégration du site a été réalisée en HTML5, CSS3 et JavaScript sans Framework.
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)<img alt="ESLint" src="https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white"><img alt="SASS" src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white"/>
 
-- [1. GameOne](#1-gameone)
-  - [1.1. Timeline et découpage des tâches](#11-timeline-et-découpage-des-tâches)
-    - [1.1.1. Branche de préparation](#111-branche-de-préparation)
-    - [1.1.2. Branche dédiée au développement du formulaire](#112-branche-dédiée-au-développement-du-formulaire)
-    - [1.1.3. Branche dédiée à la mise en page et au responsive](#113-branche-dédiée-à-la-mise-en-page-et-au-responsive)
-  - [1.2. Correction et refactorisation](#12-correction-et-refactorisation)
-    - [1.2.1. Refactorisation de la fonction 'editNav()'](#121-refactorisation-de-la-fonction-editnav)
-    - [1.2.2. Refactorisation de la fonction 'launchModal()'](#122-refactorisation-de-la-fonction-launchmodal)
-    - [1.2.3. Correction du code _HTML_ et _CSS_](#123-correction-du-code-html-et-css)
-  - [1.3. Développement du formulaire](#13-développement-du-formulaire)
-    - [1.3.1. Fermeture de la modal sur (x)](#131-fermeture-de-la-modal-sur-x)
-    - [1.3.2. Liaison des `<label>` et `<input>`](#132-liaison-des-label-et-input)
-    - [1.3.3. Conformité de la saisie utilisateur](#133-conformité-de-la-saisie-utilisateur)
-      - [1.3.3.1. Préparation du code _HTML_](#1331-préparation-du-code-html)
-      - [1.3.3.2. Logique du code JavaScript](#1332-logique-du-code-javascript)
-        - [1.3.3.2.1. Les champs de type 'text'](#13321-les-champs-de-type-text)
-        - [1.3.3.2.2. Les champs de type 'select'](#13322-les-champs-de-type-select)
-        - [1.3.3.2.3. Validation du formulaire](#13323-validation-du-formulaire)
-  - [1.4. Mise à disposition des données](#14-mise-à-disposition-des-données)
-  - [1.5. v1.0.1](#15-v101)
+## 1.1. Créer une landing page avec JavaScript
+
+Programmer en Vanilla JavaScript.
 
 ***
 
-## 1.1. Timeline et découpage des tâches
+- [1. GameOne](#1-gameone)
+  - [1.1. Créer une landing page avec JavaScript](#11-créer-une-landing-page-avec-javascript)
+    - [1.1.1. Timeline et découpage des tâches](#111-timeline-et-découpage-des-tâches)
+      - [1.1.1.1. Branche de préparation](#1111-branche-de-préparation)
+      - [1.1.1.2. Branche dédiée au développement du formulaire](#1112-branche-dédiée-au-développement-du-formulaire)
+      - [1.1.1.3. Branche dédiée à la mise en page et au responsive](#1113-branche-dédiée-à-la-mise-en-page-et-au-responsive)
+    - [1.1.2. Correction et refactorisation](#112-correction-et-refactorisation)
+      - [1.1.2.1. Refactorisation de la fonction 'editNav()'](#1121-refactorisation-de-la-fonction-editnav)
+      - [1.1.2.2. Refactorisation de la fonction 'launchModal()'](#1122-refactorisation-de-la-fonction-launchmodal)
+      - [1.1.2.3. Correction du code _HTML_ et _CSS_](#1123-correction-du-code-html-et-css)
+    - [1.1.3. Développement du formulaire](#113-développement-du-formulaire)
+      - [1.1.3.1. Fermeture de la modal sur (x)](#1131-fermeture-de-la-modal-sur-x)
+      - [1.1.3.2. Liaison des `<label>` et `<input>`](#1132-liaison-des-label-et-input)
+      - [1.1.3.3. Conformité de la saisie utilisateur](#1133-conformité-de-la-saisie-utilisateur)
+        - [1.1.3.3.1. Préparation du code _HTML_](#11331-préparation-du-code-html)
+        - [1.1.3.3.2. Logique du code JavaScript](#11332-logique-du-code-javascript)
+          - [1.1.3.3.2.1. Les champs de type 'text'](#113321-les-champs-de-type-text)
+          - [1.1.3.3.2.2. Les champs de type 'select'](#113322-les-champs-de-type-select)
+          - [1.1.3.3.2.3. Validation du formulaire](#113323-validation-du-formulaire)
+    - [1.1.4. Mise à disposition des données](#114-mise-à-disposition-des-données)
+    - [1.1.5. v1.1.0](#115-v110)
+
+***
+
+### 1.1.1. Timeline et découpage des tâches
 
 Le projet à été initialisé avec _Git-Flow_.  
 Les tâches ont été réparties en trois branches de travail.
 
-### 1.1.1. Branche de préparation
+#### 1.1.1.1. Branche de préparation
 
 ![Première branche de travail](./supply/_img_README/kraken-1.png)
 
-### 1.1.2. Branche dédiée au développement du formulaire
+#### 1.1.1.2. Branche dédiée au développement du formulaire
 
 ![Deuxième branche de travail](./supply/_img_README/kraken-2.png)
 
-### 1.1.3. Branche dédiée à la mise en page et au responsive
+#### 1.1.1.3. Branche dédiée à la mise en page et au responsive
 
 ![Troisième branche de travail](./supply/_img_README/kraken-3.png)
 
 ***
 
-##  1.2. Correction et refactorisation
+###  1.1.2. Correction et refactorisation
 
-### 1.2.1. Refactorisation de la fonction 'editNav()'
+#### 1.1.2.1. Refactorisation de la fonction 'editNav()'
 
 Nous pouvons constater dans le code HTML ci-dessous :
 
@@ -113,7 +120,7 @@ Et le code _HTML_ nettoyé :
 </a>
 ```
 
-### 1.2.2. Refactorisation de la fonction 'launchModal()'
+#### 1.1.2.2. Refactorisation de la fonction 'launchModal()'
 
 Fonction non commentée et non optimisée :
 
@@ -155,11 +162,11 @@ Avec la constante `modalbg` en tête de document car réutilisée dans le code :
 const modalbg = document.querySelector('.bground');
 ```
 
-### 1.2.3. Correction du code _HTML_ et _CSS_
+#### 1.1.2.3. Correction du code _HTML_ et _CSS_
 
 Les erreurs relevées ci-dessous lors de la validation [_W3C_](https://validator.w3.org) ont été corrigées :
 
-![Test de validation HTML W3C](./supply/_img_README/w3c_validation.png)
+<img src="./supply/_img_README/w3c_validation.png" alt="Test de validation HTML W3C" width="700"/>
 
 Autres corrections :  
 
@@ -170,9 +177,9 @@ Autres corrections :
 
 ***
 
-## 1.3. Développement du formulaire
+### 1.1.3. Développement du formulaire
 
-### 1.3.1. Fermeture de la modal sur (x)
+#### 1.1.3.1. Fermeture de la modal sur (x)
 
 Fonction demeurant active et qui passera la modal en `display: none;`.  
 Déclenchement au 'click' par le gestionnaire d'évennement sur le noeud `<span>` de classe `.close`. 
@@ -189,7 +196,7 @@ Déclenchement au 'click' par le gestionnaire d'évennement sur le noeud `<span>
 })();
 ```
 
-### 1.3.2. Liaison des `<label>` et `<input>`
+#### 1.1.3.2. Liaison des `<label>` et `<input>`
 
 Un attribut `for` est présent sur tous les `<label>` et est de même valeur que l'`id` de l'`<input>` auquel il est lié.  
 
@@ -202,9 +209,9 @@ Exemple :
 
 Dans le code ci-dessus concernant les conditions d'utilisation, l'attribut `checked` sera retiré car l'utilisateur doit cocher cette case lui-même attestant ainsi en avoir pris connaissance.
 
-### 1.3.3. Conformité de la saisie utilisateur
+#### 1.1.3.3. Conformité de la saisie utilisateur
 
-#### 1.3.3.1. Préparation du code _HTML_
+##### 1.1.3.3.1. Préparation du code _HTML_
 
 Ayant choisi l'hypothèse d'une gestion _Back-end_ en _JavaScript_, le code _HTML_ a été allegé en supprimant de la balise `<form>` les attributs :
 - name="reserve" 
@@ -241,9 +248,9 @@ Exemple avec le champ du nombre de participations :
 
 Pour le choix de la ville et les conditions d'utilisation, deux `<div>` de classe `.error-message` seront positionnées différement afin de recevoir un message d'erreur personnalisé respectant le formatage précédent (le code _HTML_ étant un peu différent pour ces deux champs).
 
-#### 1.3.3.2. Logique du code JavaScript
+##### 1.1.3.3.2. Logique du code JavaScript
 
-##### 1.3.3.2.1. Les champs de type 'text'
+###### 1.1.3.3.2.1. Les champs de type 'text'
 
 ![Les champs de type 'text'](./supply/_img_README/type_text.png)
 
@@ -263,13 +270,13 @@ Cette fonction prend en argument :
 - une chaine de caractère qui correspondra à la clé pour le stockage en `localStorage`. 
 
 
-##### 1.3.3.2.2. Les champs de type 'select'
+###### 1.1.3.3.2.2. Les champs de type 'select'
 
 ![Les champs de type 'select'](./supply/_img_README/type_select.png)
 
 Pour ce type de champ, les fonctions `checkCitySelect()`, `termOfUse()` et `newsLetter()` surveilleront l'état `checked` de ces `<input>` à la soumission du formulaire.
 
-##### 1.3.3.2.3. Validation du formulaire
+###### 1.1.3.3.2.3. Validation du formulaire
 
 A chaque saisie correct, un attribut `data-error-visible="false"` est injecté à la `<div>` parente de l'`<input>` écoutée.  
 A la soumission du formulaire, la fonction `goodAnswer()` compte le nombre d'attributs 'correct'.  
@@ -307,7 +314,7 @@ const validationAndConfirmation = () => {
 
 ***
 
-## 1.4. Mise à disposition des données
+### 1.1.4. Mise à disposition des données
 
 A la fin du fichier ***modal.js***, les données utilisateurs sont rassemblées dans un objet et mises à disposition du _Back-end_.  
 Un affichage dans la console est aussi prévu pour vérification.
@@ -334,10 +341,8 @@ const userData = {
 
 ***
 
-## 1.5. v1.0.1
+### 1.1.5. v1.1.0
   
-Publication de la _release_ `v1.0.1` sur la branche _master_.
+Publication de la _release_ `v1.1.0` sur la branche _master_.
 
 ***
-
-_**End**_

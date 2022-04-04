@@ -14,23 +14,27 @@ const quantity = document.getElementById('quantity');
 // regExp
 const regExpName = /^([A-Za-zéèêëîïç]{2,15})([-\s]?)([A-Za-zéèêëîïç]{0,15})$/;
 const regExpMail = /^([A-Za-z0-9\-.]+)@([A-Za-z0-9-]+)\.([a-z]{2,3})$/;
-const regExpDate = /^(((0[1-9]|[12][0-9]|30)[-/]?(0[13-9]|1[012])|31[-/]?(0[13578]|1[02])|(0[1-9]|1[0-9]|2[0-8])[-/]?02)[-/]?[0-9]{4}|29[-/]?02[-/]?([0-9]{2}(([2468][048]|[02468][48])|[13579][26])|([13579][26]|[02468][048]|0[0-9]|1[0-6])00))$/;
+const regExpDate =
+  /^(((0[1-9]|[12][0-9]|30)[-/]?(0[13-9]|1[012])|31[-/]?(0[13578]|1[02])|(0[1-9]|1[0-9]|2[0-8])[-/]?02)[-/]?[0-9]{4}|29[-/]?02[-/]?([0-9]{2}(([2468][048]|[02468][48])|[13579][26])|([13579][26]|[02468][048]|0[0-9]|1[0-6])00))$/;
 const regExpNumber = /^[1-6]{1}$/;
 
 // errorMessage
-const errorMessageFirstName = 'Veuillez renseigner votre prénom (2 lettres minimum).';
-const errorMessageLastName = 'Veuillez renseigner votre nom (2 lettres minimum).';
+const errorMessageFirstName =
+  'Veuillez renseigner votre prénom (2 lettres minimum).';
+const errorMessageLastName =
+  'Veuillez renseigner votre nom (2 lettres minimum).';
 const errorMessageMail = 'Merci de saisir un adresse E-mail valide.';
 const errorMessageBirthDate = 'Veuillez saisir votre date de naissance.';
-const errorMessageQuantity = 'Il y a eu 6 évenements par le passé. Choisir entre 1 et 6.';
+const errorMessageQuantity =
+  'Il y a eu 6 évenements par le passé. Choisir entre 1 et 6.';
 
 // ************************ Other *************************
 
 // openResponsiveMenu
 /**
  * @name IDontReallyExist
- * @function 
- * Gère l'affichage et le déploiement du menu responsive au click sur l'icône 
+ * @function
+ * Gère l'affichage et le déploiement du menu responsive au click sur l'icône
  * (visible à 768px max).
  */
 (() => {
@@ -53,7 +57,7 @@ const errorMessageQuantity = 'Il y a eu 6 évenements par le passé. Choisir ent
 // openForm
 /**
  * @name IDontReallyExist
- * @function 
+ * @function
  * - Ouvre le formulaire au click sur le boutton 'Je m'inscris'.
  * - Efface les données stockées en localStorage.
  * - Reset les input du formulaire
@@ -66,7 +70,7 @@ const errorMessageQuantity = 'Il y a eu 6 évenements par le passé. Choisir ent
       modalbg.style.display = 'block';
       localStorage.clear();
       modal.reset();
-      window.scrollTo(0,0);
+      window.scrollTo(0, 0);
     });
   });
 })();
@@ -74,11 +78,11 @@ const errorMessageQuantity = 'Il y a eu 6 évenements par le passé. Choisir ent
 // closeForm
 /**
  * @name IDontReallyExist
- * @function 
+ * @function
  * - Ferme le formulaire au click sur (x).
  * - Recharge la page
  */
- (() => {
+(() => {
   const modalCloseBtn = document.querySelector('span.close');
   modalCloseBtn.addEventListener('click', () => {
     modalbg.style.display = 'none';
@@ -122,8 +126,8 @@ const selectParent = (childrenId) => {
 /**
  * @name changeFocusTextValidity
  * @function
- * - Contrôle la conformité de la saisie utilisateur au changement de focus pour 
- *   les champs de type 'text' (prénom, nom, e-mail, date de naissane, nombre de 
+ * - Contrôle la conformité de la saisie utilisateur au changement de focus pour
+ *   les champs de type 'text' (prénom, nom, e-mail, date de naissane, nombre de
  *   participations).
  * - Injecte un message d'erreur à l'élément parent du champ contrôlé si non
  *   conforme a l'expression régulière assigné.
@@ -148,16 +152,16 @@ const changeFocusTextValidity = (inputListened, regExp, errorMessage) => {
 
 /**
  * @name submitTextValidity
- * @function 
- * - Contrôle si les champs de type 'text' (prénom, nom, e-mail, date de 
- *   naissane, nombre de participations) sont vides à la soumission du 
- *   formulaire.  
+ * @function
+ * - Contrôle si les champs de type 'text' (prénom, nom, e-mail, date de
+ *   naissane, nombre de participations) sont vides à la soumission du
+ *   formulaire.
  * - Injecte un message d'erreur à l'élément parent du champ contrôlé si vide.
  * - Stocke les données saisies en localStorage si non vide.
  * @param  {object} inputListened - Elément de type 'input' contrôlé.
  * @param  {string} errorMessage - Message d'erreur injecté à l'élément parent du
  * champ contrôlé si vide.
- * @param  {string} keyName - Nom de la clé pour le stockage de la donnée en 
+ * @param  {string} keyName - Nom de la clé pour le stockage de la donnée en
  * localStorage.
  */
 const submitTextValidity = (inputListened, errorMessage, keyName) => {
@@ -174,17 +178,21 @@ const submitTextValidity = (inputListened, errorMessage, keyName) => {
 
 /**
  * @name checkCitySelect
- * @function 
- * - Vérifie à la soumission du formulaire, si l'un des bouttons radio a été 
+ * @function
+ * - Vérifie à la soumission du formulaire, si l'un des bouttons radio a été
  *   sélectionné.
  * - Injecte un message d'erreur si aucune ville n'a été choisie.
  * - Injecte un attribut de validation si ok.
  * - Stocke la ville sélectionnée en localStorage sous le clé 'city'.
  */
 const checkCitySelect = () => {
-  const inputsListened = document.querySelectorAll('.checkbox-input[name="location"]');
+  const inputsListened = document.querySelectorAll(
+    '.checkbox-input[name="location"]'
+  );
   const whereToSetErrorData = document.querySelector('.formData#city');
-  const whereToSetErrorMessage = document.querySelector('div#city.formData .error-message');
+  const whereToSetErrorMessage = document.querySelector(
+    'div#city.formData .error-message'
+  );
   submitForm.addEventListener('click', () => {
     // Boucle de vérification des bouttons 'radio'.
     for (let item of inputsListened) {
@@ -195,7 +203,8 @@ const checkCitySelect = () => {
         // Sortie de boucle dès qu'une ville est vérifiée 'checked'.
         break;
       } else {
-        whereToSetErrorMessage.innerHTML = '<p>Merci de sélectionner une ville.</p>';
+        whereToSetErrorMessage.innerHTML =
+          '<p>Merci de sélectionner une ville.</p>';
         whereToSetErrorData.setAttribute('data-error-visible', 'true');
       }
     }
@@ -204,7 +213,7 @@ const checkCitySelect = () => {
 
 /**
  * @name termOfUse
- * @function 
+ * @function
  * - Contrôle à la soumission du formulaire, si les conditions d'utilisations ont
  *   été acceptées.
  * - Injecte un message d'erreur si la checkbox n'est pas cochée.
@@ -213,10 +222,13 @@ const checkCitySelect = () => {
 const termOfUse = () => {
   const inputListened = document.getElementById('checkbox1');
   const whereToSetErrorData = document.querySelector('.formData#tOU');
-  const whereToSetErrorMessage = document.querySelector('div.formData#tOU .error-message');
+  const whereToSetErrorMessage = document.querySelector(
+    'div.formData#tOU .error-message'
+  );
   submitForm.addEventListener('click', () => {
     if (inputListened.checked == false) {
-      whereToSetErrorMessage.innerHTML = '<p>Vous devez accepter les termes et conditions.</p>';
+      whereToSetErrorMessage.innerHTML =
+        '<p>Vous devez accepter les termes et conditions.</p>';
       whereToSetErrorData.setAttribute('data-error-visible', 'true');
     } else if (inputListened.checked) {
       whereToSetErrorMessage.innerHTML = '';
@@ -227,19 +239,21 @@ const termOfUse = () => {
 
 /**
  * @name newsLetter
- * @function 
+ * @function
  * - Stock un booléen sous la clé 'newsLetter' en localStorage.
  * - 'true' si l'utilisateur souhaite être informé des futurs évenements.
  * - 'false' si non.
  */
 const newsLetter = () => {
   const inputListened = document.getElementById('checkbox2');
-  submitForm.addEventListener('click', () => localStorage.setItem('newsLetter', inputListened.checked));
+  submitForm.addEventListener('click', () =>
+    localStorage.setItem('newsLetter', inputListened.checked)
+  );
 };
 
 /**
  * @name closeBookingConfirmation
- * @function 
+ * @function
  * - Ferme la fenêtre de confirmation au click sur 'ok'.
  * - Recharge la page.
  */
@@ -273,9 +287,11 @@ const bookingConfirmation = () => {
  * @return  {number} retourne le nombre d'entrées valides saisies par l'utilisateur.
  */
 const goodAnswer = () => {
-  const allEntry = document.querySelectorAll('.formData[data-error-visible="false"]');
+  const allEntry = document.querySelectorAll(
+    '.formData[data-error-visible="false"]'
+  );
   let i = 0;
-  allEntry.forEach(() => i += 1);
+  allEntry.forEach(() => (i += 1));
   return i;
 };
 
@@ -324,7 +340,7 @@ const userData = {
   birthDate: localStorage.getItem('birthDate'),
   quantity: localStorage.getItem('quantity'),
   city: localStorage.getItem('city'),
-  newsLetter: localStorage.getItem('newsLetter')
+  newsLetter: localStorage.getItem('newsLetter'),
 };
 
 // displayUserData
